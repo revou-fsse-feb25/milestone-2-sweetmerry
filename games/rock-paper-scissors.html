@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors - GameStudio</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .rps-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .rps-option {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #f8f9fa;
+            border: 3px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .rps-option:hover {
+            transform: scale(1.1);
+            border-color: #007bff;
+        }
+        
+        .rps-option i {
+            font-size: 32px;
+            color: #333;
+        }
+        
+        .result-display {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .player-choice, .computer-choice {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            margin: 0 15px;
+        }
+        
+        .result-message {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .win { color: green; }
+        .lose { color: red; }
+        .draw { color: orange; }
+        
+        .score-display {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .score-item {
+            font-size: 18px;
+        }
+        
+        .score-value {
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>GameStudio</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="rock-paper-scissors.html" class="active">Rock Paper Scissors</a></li>
+                    <li><a href="clicker.html">Clicker Game</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="game-container">
+            <div class="game-header">
+                <h2>Rock Paper Scissors</h2>
+                <p>The classic game of chance. Can you beat the computer?</p>
+            </div>
+
+            <div class="game-instructions">
+                <h3>How to Play:</h3>
+                <ul>
+                    <li>Click on one of the three options: Rock, Paper, or Scissors.</li>
+                    <li>The computer will randomly select its choice.</li>
+                    <li>Rock beats Scissors, Scissors beats Paper, Paper beats Rock.</li>
+                    <li>Try to win more rounds than the computer!</li>
+                </ul>
+            </div>
+
+            <div class="game-play-area">
+                <div class="score-display">
+                    <div class="score-item">
+                        Player: <span id="player-score" class="score-value">0</span>
+                    </div>
+                    <div class="score-item">
+                        Computer: <span id="computer-score" class="score-value">0</span>
+                    </div>
+                    <div class="score-item">
+                        Draws: <span id="draws" class="score-value">0</span>
+                    </div>
+                </div>
+                
+                <div id="game-status">
+                    <p>Choose your weapon!</p>
+                </div>
+                
+                <div class="rps-options">
+                    <div class="rps-option" data-choice="rock">
+                        <i class="fas fa-hand-rock"></i>
+                    </div>
+                    <div class="rps-option" data-choice="paper">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <div class="rps-option" data-choice="scissors">
+                        <i class="fas fa-hand-scissors"></i>
+                    </div>
+                </div>
+                
+                <div id="result-display" class="result-display" style="display: none;">
+                    <div class="player-choice">
+                        You: <span id="player-choice"></span>
+                    </div>
+                    <div class="computer-choice">
+                        Computer: <span id="computer-choice"></span>
+                    </div>
+                    <div id="result-message" class="result-message"></div>
+                </div>
+                
+                <div>
+                    <button id="reset-game" class="btn">Reset Score</button>
+                </div>
+            </div>
+            
+            <a href="../index.html" class="back-button">Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>GameStudio</h2>
+                    <p>Fun games for everyone!</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Sweetmerry-GameStudio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="rock-paper-scissors.js"></script>
+</body>
+</html> 
