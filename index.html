@@ -3,9 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweetmerry-Gamestudio</title>
+    <title>Sweetmerry - Awesome Games for Everyone</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(to right, #007bff, #00c6ff);
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+        }
+        
+        .game-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .game-image {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .game-card:hover .game-image::after {
+            opacity: 0.7;
+        }
+        
+        .game-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+        
+        .game-details {
+            padding: 25px;
+        }
+        
+        .game-details h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        .game-details .btn {
+            border-radius: 30px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 50px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #007bff, #00c6ff);
+        }
+        
+        .about-section {
+            background-color: #f0f0f0;
+        }
+        
+        footer {
+            background-color: #222;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -16,6 +118,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="games/number-guess.html">Number Guess</a></li>
                     <li><a href="games/rock-paper-scissors.html">Rock Paper Scissors</a></li>
                     <li><a href="games/clicker.html">Clicker Game</a></li>
                 </ul>
@@ -26,7 +129,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Welcome to Sweetmerry-Gamestudio</h2>
+                <h2>Welcome to Sweetmerry-GameStudio</h2>
                 <p>We create fun, engaging games that everyone can enjoy!</p>
                 <a href="#games" class="btn btn-primary">Play Now</a>
             </div>
@@ -38,18 +141,26 @@
             <h2 class="section-title">Our Games</h2>
             <div class="games-grid">
                 <div class="game-card">
-                    <div class="game-image" style="background-color: #81c784;"></div>
+                    <div class="game-image" style="background: url('https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover;"></div>
+                    <div class="game-details">
+                        <h3>Number Guessing Game</h3>
+                        <p>Test your luck and intuition by guessing the hidden number! Try to find the secret number with the fewest attempts.</p>
+                        <a href="games/number-guess.html" class="btn">Play Now</a>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <div class="game-image" style="background: url('https://images.unsplash.com/photo-1553481187-be93c21490a9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover;"></div>
                     <div class="game-details">
                         <h3>Rock Paper Scissors</h3>
-                        <p>The classic game of chance. Can you beat the computer?</p>
+                        <p>The classic game of chance. Can you beat the computer? Choose your weapon and try to outsmart your opponent!</p>
                         <a href="games/rock-paper-scissors.html" class="btn">Play Now</a>
                     </div>
                 </div>
                 <div class="game-card">
-                    <div class="game-image" style="background-color: #64b5f6;"></div>
+                    <div class="game-image" style="background: url('https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80'); background-size: cover;"></div>
                     <div class="game-details">
                         <h3>Clicker Game</h3>
-                        <p>How fast can you click? Test your speed and endurance!</p>
+                        <p>How fast can you click? Test your speed and endurance! Try to set a new high score within the time limit.</p>
                         <a href="games/clicker.html" class="btn">Play Now</a>
                     </div>
                 </div>
@@ -59,7 +170,7 @@
 
     <section class="about-section">
         <div class="container">
-            <h2 class="section-title">About GameStudio</h2>
+            <h2 class="section-title">About Sweetmerry-GameStudio</h2>
             <p>GameStudio is a fictional game development company created for educational purposes. We focus on creating simple yet engaging browser-based games using JavaScript, HTML, and CSS.</p>
             <p>Our mission is to bring joy and entertainment through interactive gaming experiences that are accessible to everyone.</p>
         </div>
@@ -80,7 +191,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Sweetmerry-GameStudio. All rights reserved.</p>
+                <p>&copy; 2025 Sweetmerry. All rights reserved.</p>
             </div>
         </div>
     </footer>
